@@ -19,4 +19,19 @@ struct Response: Decodable {
 struct NearPlaces: Decodable {
     let id: String
     let name:String
+    let location: Location
+    let categories: [Categories]
+}
+
+struct Location: Decodable {
+    let address: String?
+    let country: String
+    let city: String?
+    let state: String?
+    let distance: Int
+    let postalCode: String?
+}
+
+struct Categories: Decodable {
+    let name: String
 }

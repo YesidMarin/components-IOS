@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import CoreLocation
 
 class PlacesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var navegationItemBar: UINavigationItem!
     
     lazy var viewModel: PlacesViewModel = {
         return PlacesViewModel()
+    }()
+    
+    lazy var locationManager: LocationManager = {
+        return LocationManager()
     }()
     
     override func viewDidLoad() {
@@ -21,9 +27,15 @@ class PlacesViewController: UIViewController {
         
         viewModel.reloadTableViewModel = { () in
             self.tableView.reloadData()
+            self.navegationItemBar.title = self.viewModel.getCityLocationCurrency()
         }
         
-        viewModel.initFetch()
+        viewModel.initLocation()
+        
+    }
+    
+    @IBAction func backButtonItem(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
 

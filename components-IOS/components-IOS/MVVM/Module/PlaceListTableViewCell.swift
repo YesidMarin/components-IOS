@@ -11,11 +11,22 @@ import UIKit
 class PlaceListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var namePlace: UILabel!
+    @IBOutlet weak var nameCategorie: UILabel!
+    @IBOutlet weak var country: UILabel!
+    @IBOutlet weak var postalCode: UILabel!
     
     // get value of view model in cell properties
     var placeListCellViewModel: PlaceListCellViewModel?{
         didSet {
-            namePlace.text = placeListCellViewModel?.titleText
+            let namePlaceViewModel = placeListCellViewModel?.namePlace ?? ""
+            let nameCategorieViewModel = placeListCellViewModel?.nameCategorie ?? ""
+            let postalCodeViewModel = placeListCellViewModel?.postalCode ?? ""
+            let countryViewModel = placeListCellViewModel?.country ?? ""
+            namePlace.text = namePlaceViewModel
+            nameCategorie.text =  "Categorie: \(nameCategorieViewModel)"
+            postalCode.text = "Postal code: \(postalCodeViewModel)"
+            country.text = countryViewModel
+            
         }
     }
 

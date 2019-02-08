@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD34BD64220DCAEA0028341A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD34BD63220DCAEA0028341A /* LocationManager.swift */; };
+		DD34BD67220DCBCB0028341A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD34BD66220DCBCB0028341A /* CoreLocation.framework */; };
+		DD34BD69220DE0010028341A /* GPSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD34BD68220DE0010028341A /* GPSModel.swift */; };
 		DDE9C33F220B6DDF002B0BF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE9C33E220B6DDF002B0BF9 /* AppDelegate.swift */; };
 		DDE9C341220B6DDF002B0BF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE9C340220B6DDF002B0BF9 /* ViewController.swift */; };
 		DDE9C344220B6DDF002B0BF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE9C342220B6DDF002B0BF9 /* Main.storyboard */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD34BD63220DCAEA0028341A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		DD34BD66220DCBCB0028341A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DD34BD68220DE0010028341A /* GPSModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSModel.swift; sourceTree = "<group>"; };
 		DDE9C33B220B6DDF002B0BF9 /* components-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "components-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE9C33E220B6DDF002B0BF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDE9C340220B6DDF002B0BF9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,17 +45,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD34BD67220DCBCB0028341A /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD34BD65220DCBCA0028341A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD34BD66220DCBCB0028341A /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DDE9C332220B6DDF002B0BF9 = {
 			isa = PBXGroup;
 			children = (
 				DDE9C33D220B6DDF002B0BF9 /* components-IOS */,
 				DDE9C33C220B6DDF002B0BF9 /* Products */,
+				DD34BD65220DCBCA0028341A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				DDE9C353220B6EAD002B0BF9 /* PlacesModel.swift */,
+				DD34BD68220DE0010028341A /* GPSModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -105,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				DDE9C356220B6EEF002B0BF9 /* APIService.swift */,
+				DD34BD63220DCAEA0028341A /* LocationManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -194,6 +212,8 @@
 				DDE9C35E220B6FA9002B0BF9 /* PlacesViewController.swift in Sources */,
 				DDE9C341220B6DDF002B0BF9 /* ViewController.swift in Sources */,
 				DDE9C33F220B6DDF002B0BF9 /* AppDelegate.swift in Sources */,
+				DD34BD64220DCAEA0028341A /* LocationManager.swift in Sources */,
+				DD34BD69220DE0010028341A /* GPSModel.swift in Sources */,
 				DDE9C357220B6EEF002B0BF9 /* APIService.swift in Sources */,
 				DDE9C35A220B6F5B002B0BF9 /* PlaceListTableViewCell.swift in Sources */,
 				DDE9C354220B6EAD002B0BF9 /* PlacesModel.swift in Sources */,
