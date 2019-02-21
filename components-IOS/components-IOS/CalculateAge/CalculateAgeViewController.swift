@@ -15,8 +15,8 @@ class CalculateAgeViewController: UIViewController {
         return view
     }()
     
-    lazy var txtDatePicker: UITextField = {
-        let txt = UITextField()
+    lazy var txtDatePicker: CornerRoundedTextField = {
+        let txt = CornerRoundedTextField(type: .dateBirthDay, propiertiesType: .medium)
         return txt
     }()
     
@@ -55,12 +55,13 @@ class CalculateAgeViewController: UIViewController {
         
         txtDatePicker.snp.makeConstraints { maker in
             maker.top.equalTo(contentView).offset(20)
-            maker.left.right.equalToSuperview().inset(25)
+            maker.left.right.equalToSuperview().inset(26)
+            maker.width.equalTo(DefaultSystemComponents.defaultTextFieldHeight)
         }
         
         ageLabel.snp.makeConstraints { maker in
             maker.top.equalTo(txtDatePicker.snp.bottom).offset(25)
-            maker.left.right.equalToSuperview().inset(25)
+            maker.left.right.equalToSuperview().inset(26)
         }
         
     }

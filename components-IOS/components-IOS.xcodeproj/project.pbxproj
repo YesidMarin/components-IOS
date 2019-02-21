@@ -13,6 +13,9 @@
 		DD34BD69220DE0010028341A /* GPSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD34BD68220DE0010028341A /* GPSModel.swift */; };
 		DD5E4513221EE86800A1AD87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5E4511221EE86800A1AD87 /* Main.storyboard */; };
 		DD5E4515221EF54300A1AD87 /* CalculateAgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5E4514221EF54300A1AD87 /* CalculateAgeViewModel.swift */; };
+		DDBCC741221F087300146605 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBCC740221F087300146605 /* Styles.swift */; };
+		DDBCC743221F0AA000146605 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBCC742221F0AA000146605 /* Colors.swift */; };
+		DDBCC745221F0D0400146605 /* CornerRectangleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBCC744221F0D0400146605 /* CornerRectangleTextField.swift */; };
 		DDC37073221DED9C007DB9DF /* CalculateAgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC37072221DED9C007DB9DF /* CalculateAgeViewController.swift */; };
 		DDE9C33F220B6DDF002B0BF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE9C33E220B6DDF002B0BF9 /* AppDelegate.swift */; };
 		DDE9C341220B6DDF002B0BF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE9C340220B6DDF002B0BF9 /* ViewController.swift */; };
@@ -33,6 +36,9 @@
 		DD34BD68220DE0010028341A /* GPSModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSModel.swift; sourceTree = "<group>"; };
 		DD5E4512221EE86800A1AD87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "components-IOS/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		DD5E4514221EF54300A1AD87 /* CalculateAgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateAgeViewModel.swift; sourceTree = "<group>"; };
+		DDBCC740221F087300146605 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		DDBCC742221F0AA000146605 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		DDBCC744221F0D0400146605 /* CornerRectangleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRectangleTextField.swift; sourceTree = "<group>"; };
 		DDC37072221DED9C007DB9DF /* CalculateAgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateAgeViewController.swift; sourceTree = "<group>"; };
 		DDE603632215F498008F07D6 /* DataTypes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DataTypes.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DDE9C33B220B6DDF002B0BF9 /* components-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "components-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +86,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DDBCC73F221F081900146605 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DDBCC740221F087300146605 /* Styles.swift */,
+				DDBCC742221F0AA000146605 /* Colors.swift */,
+				DDBCC744221F0D0400146605 /* CornerRectangleTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		DDC37070221DEC81007DB9DF /* CalculateAge */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +126,7 @@
 		DDE9C33D220B6DDF002B0BF9 /* components-IOS */ = {
 			isa = PBXGroup;
 			children = (
+				DDBCC73F221F081900146605 /* Components */,
 				DDE9C350220B6E69002B0BF9 /* MVVM */,
 				DDE9C33E220B6DDF002B0BF9 /* AppDelegate.swift */,
 				DDC37070221DEC81007DB9DF /* CalculateAge */,
@@ -292,10 +309,13 @@
 				DDE9C35C220B6F7E002B0BF9 /* PlacesViewModel.swift in Sources */,
 				DDE9C35E220B6FA9002B0BF9 /* PlacesViewController.swift in Sources */,
 				DDE9C341220B6DDF002B0BF9 /* ViewController.swift in Sources */,
+				DDBCC741221F087300146605 /* Styles.swift in Sources */,
 				DDE9C33F220B6DDF002B0BF9 /* AppDelegate.swift in Sources */,
 				DDC37073221DED9C007DB9DF /* CalculateAgeViewController.swift in Sources */,
 				DD34BD64220DCAEA0028341A /* LocationManager.swift in Sources */,
 				DD5E4515221EF54300A1AD87 /* CalculateAgeViewModel.swift in Sources */,
+				DDBCC745221F0D0400146605 /* CornerRectangleTextField.swift in Sources */,
+				DDBCC743221F0AA000146605 /* Colors.swift in Sources */,
 				DD34BD69220DE0010028341A /* GPSModel.swift in Sources */,
 				DDE9C357220B6EEF002B0BF9 /* APIService.swift in Sources */,
 				DDE9C35A220B6F5B002B0BF9 /* PlaceListTableViewCell.swift in Sources */,
