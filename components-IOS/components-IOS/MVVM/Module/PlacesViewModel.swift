@@ -9,21 +9,30 @@
 import Foundation
 import CoreLocation
 
+
 class PlacesViewModel: NSObject  {
     
     lazy var locationManasger: LocationManager = {
         return LocationManager()
     }()
     
-    let locationManager = CLLocationManager()
     
     private var cellViewModels: [PlaceListCellViewModel] = [PlaceListCellViewModel]() {
         didSet {
             self.reloadTableViewModel()
+            self.getCityLocationCurrency()
         }
     }
+    
+    var cityLocation = "" {
+        didSet {
+            self.changeNameCity()
+        }
+    }
+    
     private var places: [NearPlaces] = [NearPlaces]()
     var reloadTableViewModel: (()->()) = {}
+    var changeNameCity: (() -> ()) = {}
     var numberOfCells: Int {
         return cellViewModels.count
     }
@@ -38,10 +47,13 @@ class PlacesViewModel: NSObject  {
     }
     
     func initFetch() {
-        apiService.getNearPlace(latitude: coordinates.latitude , longitude: coordinates.longitude) { (success, places) in
+        self.apiService.getNearPlace(latitude: locationManasger.coordinates.latitude , longitude: locationManasger.coordinates.longitude) { (success, places) in
             self.PlacesNearby = places
             self.prepareNewNearPlace(places: places.response.venues)
         }
+        /*apiService.getCity { (success) in
+            print("Yeah call from .NET and MySQL")
+        }*/
     }
     
     func prepareNewNearPlace(places: [NearPlaces]){
@@ -56,7 +68,7 @@ class PlacesViewModel: NSObject  {
     
     func createCellViewModel( places: NearPlaces ) -> PlaceListCellViewModel {
         let nameCategorie = places.categories.first?.name ?? ""
-        let postalCode = places.location.postalCode ?? ""
+        let postalCode = places.location.address ?? ""
         let country = places.location.country
         return PlaceListCellViewModel( namePlace: places.name, nameCategorie: nameCategorie, postalCode: postalCode, country: country)
     }
@@ -65,16 +77,14 @@ class PlacesViewModel: NSObject  {
         return cellViewModels[indexPath.row]
     }
     
-    func getCityLocationCurrency() -> String {
-        guard let cities = PlacesNearby?.response.venues else { return ""}
-        var cityCurrency = ""
+    private func getCityLocationCurrency(){
+        guard let cities = PlacesNearby?.response.venues else { return }
         for city in cities {
             if let city = city.location.city {
-                cityCurrency = city
+                cityLocation = city
                 break
             }
         }
-        return cityCurrency
     }
     
 }
@@ -89,20 +99,12 @@ struct PlaceListCellViewModel {
 extension PlacesViewModel: CLLocationManagerDelegate {
     
     func initLocation() {
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-        locationManager.delegate = self
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        guard let location = locations.last else { fatalError("Not Location")}
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        coordinates.latitude = Float(locValue.latitude)
-        coordinates.longitude = Float(locValue.longitude)
-        print("location \(location),latitude \(locValue.latitude), longitude \(locValue.longitude)")
-        initFetch()
+        locationManasger.initLocation()
+        
+        locationManasger.initFetch = { () in
+            self.initFetch()
+        }
     }
 }
 

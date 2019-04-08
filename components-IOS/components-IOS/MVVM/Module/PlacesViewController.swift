@@ -18,16 +18,19 @@ class PlacesViewController: UIViewController {
         return PlacesViewModel()
     }()
     
-    lazy var locationManager: LocationManager = {
+    /*lazy var locationManager: LocationManager = {
         return LocationManager()
-    }()
+    }()*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewModel.reloadTableViewModel = { () in
             self.tableView.reloadData()
-            self.navegationItemBar.title = self.viewModel.getCityLocationCurrency()
+        }
+        
+        viewModel.changeNameCity = { () in
+            self.navegationItemBar.title = self.viewModel.cityLocation
         }
         
         viewModel.initLocation()
@@ -57,5 +60,9 @@ extension PlacesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Selected: \(indexPath)")
     }
 }

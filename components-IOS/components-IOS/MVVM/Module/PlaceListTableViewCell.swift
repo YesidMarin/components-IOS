@@ -13,7 +13,7 @@ class PlaceListTableViewCell: UITableViewCell {
     @IBOutlet weak var namePlace: UILabel!
     @IBOutlet weak var nameCategorie: UILabel!
     @IBOutlet weak var country: UILabel!
-    @IBOutlet weak var postalCode: UILabel!
+    @IBOutlet weak var address: UILabel!
     
     // get value of view model in cell properties
     var placeListCellViewModel: PlaceListCellViewModel?{
@@ -24,7 +24,7 @@ class PlaceListTableViewCell: UITableViewCell {
             let countryViewModel = placeListCellViewModel?.country ?? ""
             namePlace.text = namePlaceViewModel
             nameCategorie.text =  "Categorie: \(nameCategorieViewModel)"
-            postalCode.text = "Postal code: \(postalCodeViewModel)"
+            address.text = "Address: \(postalCodeViewModel)"
             country.text = countryViewModel
             
         }

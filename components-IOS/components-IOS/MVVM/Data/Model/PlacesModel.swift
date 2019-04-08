@@ -35,3 +35,16 @@ struct Location: Decodable {
 struct Categories: Decodable {
     let name: String
 }
+struct cityArray: Decodable {
+    let city: [City]
+    
+}
+struct City:Decodable {
+    let cityID: Int
+    let cityName: String
+    
+    enum CodingKeys: String, CodingKey {
+        case cityID = "cityId"
+        case cityName = "cityName"
+    }
+}

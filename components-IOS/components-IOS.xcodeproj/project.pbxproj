@@ -36,6 +36,7 @@
 		DD34BD68220DE0010028341A /* GPSModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSModel.swift; sourceTree = "<group>"; };
 		DD5E4512221EE86800A1AD87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "components-IOS/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		DD5E4514221EF54300A1AD87 /* CalculateAgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateAgeViewModel.swift; sourceTree = "<group>"; };
+		DD840013222583E400D39D40 /* Closures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Closures.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DDBCC740221F087300146605 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		DDBCC742221F0AA000146605 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		DDBCC744221F0D0400146605 /* CornerRectangleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRectangleTextField.swift; sourceTree = "<group>"; };
@@ -136,6 +137,7 @@
 				DDE9C347220B6DE1002B0BF9 /* LaunchScreen.storyboard */,
 				DDE9C34A220B6DE1002B0BF9 /* Info.plist */,
 				DDE603632215F498008F07D6 /* DataTypes.playground */,
+				DD840013222583E400D39D40 /* Closures.playground */,
 			);
 			path = "components-IOS";
 			sourceTree = "<group>";

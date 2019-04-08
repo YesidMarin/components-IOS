@@ -215,6 +215,7 @@ for key in transactionDictionary.keys {
 
 print(total2)
 
+
 // Tuplas, reducir for
 func accountTotal(forTransactions transactions: [String : [Float]]) -> (total: Float,numTrans: Int){
     var total: Float = 0
@@ -242,19 +243,95 @@ func addTransaction (transactionValue value: Float) -> (isSuccess: Bool, transac
     return (true, transactionTotal)
 }
 
+let dou = Double(1200000)
+let val = Double(781242)
+print(dou/val)
 
+let formatters = DateFormatter()
+let year = 2004
+formatters.dateFormat = "dd/MM/yyyy"
+let lear = formatters.date(from: "29/02/\(year)") != nil
 
+let ano = 1998
+if ((ano%4 == 0) && ((ano%100 != 0) || (ano%400 == 0))){
+    print(true)
+}
+
+var vals = [10,2]
+vals.sort { (s1,s2) -> Bool in
+    s1 > s2
+    
+}
+
+typealias thin = [String: Any]
+var sfii : thin
+
+print(type(of: sfii))
+
+"t".forEach { (char) in
+    print(char)
+}
+func *(lhs: Double, rhs: Int) -> Double {
+    return Double(rhs) * lhs
+}
+
+let otra:Double = 65.5-0.5*Int(2.30)
+let sdsds = [55.0, otra]
+print(sdsds.max())
+// Obtener ultimo día del mes
+guard var startOfMonth = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: Date()))) else { fatalError() }
+guard let sdfd = Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: startOfMonth) else { fatalError()}
+
+print(sdfd)
 // Sacar edad
 let formatter = DateFormatter()
-let birth = "02/10/1998"
+let birth = "02/06/2033"
 let dateNow = Date()
-formatter.dateFormat = "dd/mm/yyyy"
+formatter.dateFormat = "dd/MM/yyyy"
 guard let birthdate = formatter.date(from: birth) else { fatalError() }
-let ageComponents = Calendar.current.dateComponents([.day, .month, .year ], from: birthdate, to: dateNow)
-guard let age = ageComponents.year else { fatalError() }
+print(birthdate)
+let ageComponents = Double(Calendar.current.dateComponents([.day], from: birthdate, to: sdfd).day!)
+let age = ageComponents / 365.25
+let asds = round(age)
 print(age)
 
-// Obtener ultimo día del mes
-guard var startOfMonth = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: dateNow))) else { fatalError() }
-Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: startOfMonth)
+guard let sdfds = Calendar.current.date(byAdding: DateComponents(year: 62), to: birthdate) else { fatalError()}
+
+guard let adslsos = Calendar.current.date(byAdding: DateComponents(day: 6128), to: birthdate) else { fatalError()}
+
+print(adslsos)
+
+let calendar = Calendar.current
+let date = Date(timeIntervalSince1970:  birthdate.timeIntervalSince1970)
+let startOfNow = calendar.startOfDay(for: Date())
+let startOfTimeStamp = calendar.startOfDay(for: date)
+let components = calendar.dateComponents([.day], from:startOfTimeStamp , to:  startOfNow)
+let day = components.day!
+if abs(day) < 2 {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .short
+    formatter.timeStyle = .none
+    formatter.doesRelativeDateFormatting = true
+} else if day > 1 {
+    print("In \(day) days")
+} else {
+    print("\(-day/365) days ago")
+}
+
+guard let myDOB = Calendar.current.date(from: DateComponents(year: 1998, month: 03, day: 20)) else { fatalError() }
+let myAge:Float = Float(Calendar.current.dateComponents([.day], from: myDOB, to: Date()).day!)
+let dates = Date()
+let years = myAge / 365.25
+let asge = "\(years)"
+guard let ageFloat = Float(asge) else { fatalError() }
+print("Age : \(ageFloat)")
+
+
+let number = "9000"
+let sdfsd = NSNumber(value: Int(number) ?? 0)
+let fornarte = NumberFormatter()
+fornarte.groupingSeparator = "."
+fornarte.numberStyle = .decimal
+let formattedNumber = fornarte.string(from: sdfsd)
+
 

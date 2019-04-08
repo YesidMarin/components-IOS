@@ -10,32 +10,35 @@ import Foundation
 import CoreLocation
 
 class LocationManager: NSObject {
-
-
-     var reloasdTableViewModel: (()->()) = {}
     
     private let locationManager = CLLocationManager()
     
-    private var coordinates = Coordinates() {
+    var coordinates = Coordinates() {
         didSet {
-            print(coordinates.latitude)
-            print(coordinates.longitude)
-            self.reloasdTableViewModel()
+            self.initFetch()
         }
     }
+    
+    var initFetch: (() -> ()) = {}
+    
 }
 
 extension LocationManager : CLLocationManagerDelegate {
     
-    func initLocation () {
+    func initLocation() {
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
     }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let coordinatesAccuracy: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        coordinates.longitude = Float(coordinatesAccuracy.longitude)
-        coordinates.latitude = Float(coordinatesAccuracy.latitude)
+        
+        guard let location = locations.last else { fatalError("Not Location")}
+        let locValue: CLLocationCoordinate2D = location.coordinate
+        coordinates.latitude = Float(locValue.latitude)
+        coordinates.longitude = Float(locValue.longitude)
+        print("location \(location),latitude \(locValue.latitude), longitude \(locValue.longitude)")
     }
+    
 }

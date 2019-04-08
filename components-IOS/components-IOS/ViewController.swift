@@ -75,6 +75,8 @@ class ViewController: UIViewController {
             maker.left.right.width.equalToSuperview()
         }
         
+       
+        
     }
 
     @objc private func showListPlacesNearby (_ sender: UIButton) {
